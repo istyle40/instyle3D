@@ -921,13 +921,26 @@ footer {
     position: fixed;
     align-items: flex-start;
     justify-content: center;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .brand {
-    position: absolute;
-    left: 50%;
+    left: 0;
+    right: 0;
     top: 42px;
-    transform: translateX(-50%);
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    transform: none;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .brand-mark {
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .hero {
@@ -972,6 +985,8 @@ footer {
 
   .intro-screen > img:not(.intro-printer) {
     width: min(330px, 82vw);
+    clip-path: none;
+    animation: introLogoMobile 980ms 900ms ease forwards, introGlow 1800ms 1100ms ease forwards;
   }
 
   .hero {
@@ -995,5 +1010,12 @@ footer {
   .button,
   .filter {
     width: 100%;
+  }
+}
+
+@keyframes introLogoMobile {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
