@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instyle 3D Prints</title>
+    <meta
+      name="description"
+      content="A clean portfolio website for showcasing custom 3D prints, models, prototypes, and display pieces."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="intro-active">
+    <div class="intro-screen" aria-label="Website intro">
+      <img class="intro-printer" src="assets/hero-bust-modern.png" alt="" />
+      <div class="intro-shade"></div>
+      <div class="intro-logo-build" aria-hidden="true">
+        <span class="build-line build-line-a"></span>
+        <span class="build-line build-line-b"></span>
+        <span class="build-line build-line-c"></span>
+        <span class="build-line build-line-d"></span>
+        <span class="build-line build-line-e"></span>
+      </div>
+      <img src="assets/logo-new-cutout.png" alt="Instyle 3D Print Studio" />
+      <div class="intro-line"></div>
+      <div class="intro-actions">
+        <button class="intro-sound" type="button">Play intro</button>
+        <button class="intro-skip" type="button">Enter site</button>
+      </div>
+    </div>
+
+    <header class="site-header" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Instyle 3D Prints home">
+        <span class="brand-mark">
+          <img src="assets/logo-new-cutout.png" alt="" />
+        </span>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <img src="assets/hero-bust-modern.png" alt="3D printed busts and modern display figures in a maker studio" />
+        <div class="hero-overlay"></div>
+      </section>
+
+      <section class="segment segment-about" id="about">
+        <div class="segment-kicker">About Us</div>
+        <div class="segment-copy">
+          <h2>Original 3D printed work with a clean display finish.</h2>
+          <p>
+            Instyle 3D Printing Studios creates sharp custom prints, display pieces,
+            models, and practical parts with a focus on detail, surface quality, and presentation.
+          </p>
+        </div>
+      </section>
+
+      <section class="segment segment-showcase" id="showcase">
+        <div class="segment-kicker">Showcase</div>
+        <div class="showcase-row">
+          <article>
+            <img src="assets/gallery-dragon.png" alt="Detailed 3D printed display figure" />
+            <h3>Display Prints</h3>
+          </article>
+          <article>
+            <img src="assets/gallery-architecture.png" alt="3D printed architectural model" />
+            <h3>Scale Models</h3>
+          </article>
+          <article>
+            <img src="assets/gallery-functional.png" alt="Functional 3D printed parts" />
+            <h3>Useful Parts</h3>
+          </article>
+        </div>
+      </section>
+
+      <section class="segment segment-contact" id="contact">
+        <div class="segment-kicker">Contact Us</div>
+        <div class="segment-copy">
+          <h2>Ready to start a print?</h2>
+          <p>Send your file, size, colour choice, or a simple idea and we can shape it from there.</p>
+          <a class="contact-link" href="mailto:istyle40@gmail.com">istyle40@gmail.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Instyle 3D Prints</span>
+      <span>Custom 3D printing showcase</span>
+    </footer>
+
+    <script src="script.js?v=2"></script>
+  </body>
+</html>

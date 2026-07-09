@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iStyle3D Layout Examples</title>
+    <style>
+      :root {
+        --black: #101112;
+        --deep: #1b1c1e;
+        --green: #0f7d4f;
+        --light: #7ee0a1;
+        --mint: #a8f0bd;
+        --white: #ffffff;
+        --soft: #f4f7f5;
+        --line: rgba(16, 17, 18, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--black);
+        background: var(--white);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      header {
+        position: sticky;
+        z-index: 10;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 18px clamp(18px, 4vw, 48px);
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(16px);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 950;
+      }
+
+      .badge {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        aspect-ratio: 1;
+        border-radius: 8px;
+        color: var(--white);
+        background: var(--green);
+        box-shadow: 7px 7px 0 var(--mint);
+      }
+
+      .back {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        border-radius: 8px;
+        padding: 0 14px;
+        color: var(--white);
+        background: var(--black);
+        text-decoration: none;
+        font-weight: 850;
+      }
+
+      main {
+        width: min(1220px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: clamp(32px, 6vw, 72px) 0;
+      }
+
+      .intro h1 {
+        max-width: 850px;
+        margin: 0;
+        font-size: clamp(2.6rem, 7vw, 6.2rem);
+        line-height: 0.94;
+      }
+
+      .intro p {
+        max-width: 680px;
+        margin: 18px 0 0;
+        color: #5f6661;
+        font-size: 1.08rem;
+      }
+
+      .layout-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: clamp(32px, 5vw, 58px);
+      }
+
+      .layout-card {
+        display: grid;
+        gap: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--soft);
+        overflow: hidden;
+      }
+
+      .mock {
+        min-height: 360px;
+        background: var(--white);
+      }
+
+      .card-copy {
+        padding: 0 18px 20px;
+      }
+
+      .card-copy h2 {
+        margin: 0 0 8px;
+        font-size: 1.2rem;
+      }
+
+      .card-copy p {
+        margin: 0;
+        color: #5f6661;
+      }
+
+      .mock-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 14px;
+      }
+
+      .mock-logo {
+        width: 36px;
+        aspect-ratio: 1;
+        border-radius: 7px;
+        background: var(--green);
+        box-shadow: 5px 5px 0 var(--mint);
+      }
+
+      .mock-nav {
+        display: flex;
+        gap: 6px;
+      }
+
+      .mock-nav span {
+        width: 42px;
+        height: 10px;
+        border-radius: 999px;
+        background: #dce3df;
+      }
+
+      .mock-nav span:last-child {
+        width: 54px;
+        background: var(--mint);
+      }
+
+      .hero-focused {
+        color: var(--white);
+        background:
+          radial-gradient(circle at 70% 42%, rgba(126, 224, 161, 0.28), transparent 34%),
+          var(--black);
+      }
+
+      .hero-focused .mock-body {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 18px;
+        padding: 24px;
+      }
+
+      .big-title {
+        height: 76px;
+        border-radius: 8px;
+        background: var(--white);
+      }
+
+      .copy-lines {
+        display: grid;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .copy-lines span {
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.24);
+      }
+
+      .viewer {
+        min-height: 190px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, transparent 46%, rgba(126, 224, 161, 0.7) 47% 54%, transparent 55%),
+          radial-gradient(circle at 52% 48%, var(--green) 0 28px, transparent 29px),
+          rgba(255, 255, 255, 0.08);
+      }
+
+      .catalog-layout {
+        background: var(--white);
+      }
+
+      .catalog-layout .mock-body {
+        padding: 18px;
+      }
+
+      .catalog-top {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .catalog-top div {
+        min-height: 86px;
+        border-radius: 8px;
+        background: var(--black);
+      }
+
+      .catalog-top div:last-child {
+        background: var(--mint);
+      }
+
+      .tiles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .tiles span {
+        min-height: 72px;
+        border-radius: 8px;
+        background: var(--soft);
+        border: 1px solid var(--line);
+      }
+
+      .studio-layout {
+        display: grid;
+        grid-template-columns: 86px 1fr;
+        background: var(--black);
+      }
+
+      .side-rail {
+        display: grid;
+        align-content: start;
+        gap: 12px;
+        padding: 14px;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .side-rail span {
+        height: 38px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .side-rail span:first-child {
+        background: var(--green);
+      }
+
+      .studio-main {
+        padding: 18px;
+      }
+
+      .studio-live {
+        min-height: 150px;
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(126, 224, 161, 0.25), transparent),
+          #252729;
+      }
+
+      .studio-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .studio-row span {
+        min-height: 74px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .choose {
+        margin-top: 44px;
+        padding: 24px;
+        border-radius: 8px;
+        color: var(--white);
+        background: var(--black);
+      }
+
+      .choose h2 {
+        margin: 0 0 10px;
+      }
+
+      .choose p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.76);
+      }
+
+      @media (max-width: 940px) {
+        .layout-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .mock {
+          min-height: 320px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="badge">i3D</span>
+        <span>iStyle3D Layout Examples</span>
+      </div>
+      <a class="back" href="index.html">Back to website</a>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1>Choose the next layout direction.</h1>
+        <p>
+          These are three different ways the iStyle3D website could be arranged before changing the main homepage.
+        </p>
+      </section>
+
+      <section class="layout-grid" aria-label="Layout examples">
+        <article class="layout-card">
+          <div class="mock hero-focused">
+            <div class="mock-header">
+              <div class="mock-logo"></div>
+              <div class="mock-nav"><span></span><span></span><span></span></div>
+            </div>
+            <div class="mock-body">
+              <div>
+                <div class="big-title"></div>
+                <div class="copy-lines"><span></span><span></span><span></span></div>
+              </div>
+              <div class="viewer"></div>
+            </div>
+          </div>
+          <div class="card-copy">
+            <h2>Option 1: Hero Studio</h2>
+            <p>Big premium intro, live 3D model first, strong brand impact for visitors.</p>
+          </div>
+        </article>
+
+        <article class="layout-card">
+          <div class="mock catalog-layout">
+            <div class="mock-header">
+              <div class="mock-logo"></div>
+              <div class="mock-nav"><span></span><span></span><span></span></div>
+            </div>
+            <div class="mock-body">
+              <div class="catalog-top"><div></div><div></div></div>
+              <div class="tiles"><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="card-copy">
+            <h2>Option 2: Showcase Catalog</h2>
+            <p>More product-focused, better for showing many prints, services, and categories quickly.</p>
+          </div>
+        </article>
+
+        <article class="layout-card">
+          <div class="mock studio-layout">
+            <div class="side-rail"><span></span><span></span><span></span><span></span></div>
+            <div class="studio-main">
+              <div class="studio-live"></div>
+              <div class="studio-row"><span></span><span></span><span></span></div>
+              <div class="studio-row"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="card-copy">
+            <h2>Option 3: Workshop Dashboard</h2>
+            <p>Modern studio tool feel with side navigation, live view, quote area, and project blocks.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="choose">
+        <h2>My recommendation</h2>
+        <p>
+          Option 1 is best if you want premium first impression. Option 2 is best if the site needs to sell services
+          clearly. Option 3 is best if you want a bold, tech-studio look.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
