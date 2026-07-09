@@ -927,18 +927,20 @@ footer {
   }
 
   .brand {
-    left: 0;
-    right: 0;
+    position: fixed;
+    left: 50vw;
+    right: auto;
     top: 42px;
-    width: 100%;
+    width: min(420px, 82vw);
     padding-right: 0;
     padding-left: 0;
-    transform: none;
+    transform: translateX(-50%);
     background: transparent;
     backdrop-filter: none;
   }
 
   .brand-mark {
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -999,7 +1001,7 @@ footer {
   }
 
   .brand-mark {
-    width: clamp(180px, 48vw, 260px);
+    width: 100%;
     aspect-ratio: 1;
   }
 
