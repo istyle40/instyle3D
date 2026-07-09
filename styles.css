@@ -936,6 +936,34 @@ footer {
 }
 
 @media (max-width: 520px) {
+  .intro-screen {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    padding: 22px 18px;
+    text-align: center;
+  }
+
+  .intro-logo-build {
+    justify-self: center;
+    width: min(330px, 82vw);
+    height: clamp(78px, 24vw, 110px);
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: calc(clamp(78px, 24vw, 110px) * -1 - 20px);
+  }
+
+  .intro-screen > img:not(.intro-printer) {
+    justify-self: center;
+    width: min(330px, 82vw);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .intro-line,
+  .intro-actions {
+    justify-self: center;
+  }
+
   .hero {
     min-height: 690px;
   }
