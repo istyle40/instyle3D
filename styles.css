@@ -424,6 +424,10 @@ a {
   line-height: 1;
 }
 
+.showcase-intro h2 {
+  color: #fff;
+}
+
 .segment-copy p {
   max-width: 650px;
   margin: 22px 0 0;
