@@ -419,6 +419,7 @@ a {
 
 .segment-copy h2 {
   margin: 0;
+  color: #fff;
   font-size: clamp(2rem, 5vw, 4.5rem);
   line-height: 1;
 }
