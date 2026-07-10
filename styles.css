@@ -459,7 +459,7 @@ a {
 .showcase-intro h2 {
   margin: 0;
   max-width: 760px;
-  color: var(--amber);
+  color: #fff;
   font-size: clamp(2.2rem, 7vw, 6.8rem);
   font-weight: 900;
   line-height: 0.92;
