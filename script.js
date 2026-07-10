@@ -6,6 +6,9 @@ const introSkip = document.querySelector(".intro-skip");
 const introSound = document.querySelector(".intro-sound");
 const adminFooterLink = document.querySelector(".admin-footer-link");
 const adminSection = document.querySelector("#administration");
+const showcaseButton = document.querySelector('a[href="#showcase"]');
+const showcaseSection = document.querySelector("#showcase");
+const pageTransition = document.querySelector(".page-transition");
 const revealPreview = document.querySelector("#reveal-preview");
 const revealBaseInput = document.querySelector("#reveal-base");
 const revealColourInput = document.querySelector("#reveal-colour");
@@ -79,6 +82,19 @@ adminFooterLink?.addEventListener("click", (event) => {
   event.preventDefault();
   adminSection.classList.remove("is-hidden");
   adminSection.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+showcaseButton?.addEventListener("click", (event) => {
+  if (!showcaseSection || !pageTransition) return;
+  event.preventDefault();
+  closeIntro();
+  pageTransition.classList.add("is-active");
+  window.setTimeout(() => {
+    showcaseSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 280);
+  window.setTimeout(() => {
+    pageTransition.classList.remove("is-active");
+  }, 820);
 });
 
 filterButtons.forEach((button) => {

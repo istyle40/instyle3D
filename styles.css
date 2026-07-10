@@ -600,6 +600,33 @@ a {
   text-transform: uppercase;
 }
 
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  color: #050505;
+  background: var(--amber);
+  opacity: 0;
+  pointer-events: none;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: opacity 180ms ease, transform 260ms ease;
+}
+
+.page-transition span {
+  font-size: clamp(1.5rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-transition.is-active {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
 .segment-copy p {
   max-width: 650px;
   margin: 22px 0 0;
