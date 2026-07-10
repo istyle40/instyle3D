@@ -425,7 +425,11 @@ a {
 }
 
 .showcase-intro h2 {
+  margin: 0;
   color: #fff;
+  font-size: clamp(1.4rem, 3vw, 2.35rem);
+  font-weight: 900;
+  line-height: 1.08;
 }
 
 .segment-copy p {
