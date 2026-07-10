@@ -91,6 +91,7 @@ showcaseButton?.addEventListener("click", (event) => {
   closeIntro();
   pageTransition.classList.add("is-active");
   window.setTimeout(() => {
+    showcaseSection.classList.remove("is-hidden");
     showcaseSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }, 280);
   window.setTimeout(() => {

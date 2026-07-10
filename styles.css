@@ -553,6 +553,10 @@ a {
   padding-top: clamp(44px, 7vw, 88px);
 }
 
+.public-showcase.is-hidden {
+  display: none;
+}
+
 .showcase-title {
   display: inline-block;
   margin: 0 0 34px;
