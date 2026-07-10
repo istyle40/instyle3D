@@ -592,6 +592,10 @@ a {
   padding-top: clamp(52px, 8vw, 92px);
 }
 
+.admin-section.is-hidden {
+  display: none;
+}
+
 .admin-panel {
   padding: clamp(24px, 4vw, 44px);
   color: #fff;
@@ -1057,11 +1061,26 @@ textarea::placeholder {
 
 footer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 18px;
   padding: 24px clamp(18px, 4vw, 56px);
   color: var(--muted);
   border-top: 1px solid var(--line);
+}
+
+.admin-footer-link {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.admin-footer-link:hover {
+  color: var(--amber);
 }
 
 @media (max-width: 860px) {

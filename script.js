@@ -4,6 +4,8 @@ const siteHeader = document.querySelector(".site-header");
 const introScreen = document.querySelector(".intro-screen");
 const introSkip = document.querySelector(".intro-skip");
 const introSound = document.querySelector(".intro-sound");
+const adminFooterLink = document.querySelector(".admin-footer-link");
+const adminSection = document.querySelector("#administration");
 const revealPreview = document.querySelector("#reveal-preview");
 const revealBaseInput = document.querySelector("#reveal-base");
 const revealColourInput = document.querySelector("#reveal-colour");
@@ -71,6 +73,13 @@ const updateHeaderVisibility = () => {
 updateHeaderVisibility();
 window.addEventListener("scroll", updateHeaderVisibility, { passive: true });
 window.addEventListener("resize", updateHeaderVisibility);
+
+adminFooterLink?.addEventListener("click", (event) => {
+  if (!adminSection) return;
+  event.preventDefault();
+  adminSection.classList.remove("is-hidden");
+  adminSection.scrollIntoView({ behavior: "smooth", block: "start" });
+});
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
