@@ -470,6 +470,58 @@ a {
   text-decoration: none;
 }
 
+.admin-section {
+  padding-top: clamp(52px, 8vw, 92px);
+}
+
+.admin-panel {
+  padding: clamp(24px, 4vw, 44px);
+  color: #fff;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 216, 77, 0.42);
+  border-radius: 4px;
+}
+
+.admin-panel .segment-copy p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.admin-grid article {
+  min-height: 190px;
+  padding: 22px;
+  background: #151515;
+  border: 1px solid rgba(255, 216, 77, 0.28);
+  border-radius: 4px;
+}
+
+.admin-grid span {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--amber);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.admin-grid h3 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 1.06rem;
+}
+
+.admin-grid p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.62;
+}
+
 .eyebrow {
   margin: 0 0 12px;
   color: var(--amber);
@@ -978,6 +1030,10 @@ footer {
   }
 
   .showcase-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-grid {
     grid-template-columns: 1fr;
   }
 
