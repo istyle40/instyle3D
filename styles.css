@@ -19,12 +19,17 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--paper);
 }
 
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
+  background: var(--paper);
+}
+
+main {
   background: var(--paper);
 }
 
@@ -395,6 +400,7 @@ a {
   width: min(1180px, calc(100% - 36px));
   margin: 0 auto;
   padding: clamp(58px, 9vw, 112px) 0;
+  background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
 
