@@ -4,8 +4,6 @@ const siteHeader = document.querySelector(".site-header");
 const introScreen = document.querySelector(".intro-screen");
 const introSkip = document.querySelector(".intro-skip");
 const introSound = document.querySelector(".intro-sound");
-const ideaButton = document.querySelector(".idea-button");
-const contactSection = document.querySelector("#contact");
 const revealPreview = document.querySelector("#reveal-preview");
 const revealBaseInput = document.querySelector("#reveal-base");
 const revealColourInput = document.querySelector("#reveal-colour");
@@ -73,13 +71,6 @@ const updateHeaderVisibility = () => {
 updateHeaderVisibility();
 window.addEventListener("scroll", updateHeaderVisibility, { passive: true });
 window.addEventListener("resize", updateHeaderVisibility);
-
-ideaButton?.addEventListener("click", (event) => {
-  if (!contactSection) return;
-  event.preventDefault();
-  closeIntro();
-  contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
-});
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
