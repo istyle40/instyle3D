@@ -5,7 +5,7 @@ const introScreen = document.querySelector(".intro-screen");
 const introSkip = document.querySelector(".intro-skip");
 const introSound = document.querySelector(".intro-sound");
 const ideaButton = document.querySelector(".idea-button");
-const showcaseBoxes = document.querySelector("#showcase-boxes");
+const contactSection = document.querySelector("#contact");
 const revealPreview = document.querySelector("#reveal-preview");
 const revealBaseInput = document.querySelector("#reveal-base");
 const revealColourInput = document.querySelector("#reveal-colour");
@@ -75,10 +75,10 @@ window.addEventListener("scroll", updateHeaderVisibility, { passive: true });
 window.addEventListener("resize", updateHeaderVisibility);
 
 ideaButton?.addEventListener("click", (event) => {
-  if (!showcaseBoxes) return;
+  if (!contactSection) return;
   event.preventDefault();
   closeIntro();
-  showcaseBoxes.scrollIntoView({ behavior: "smooth", block: "center" });
+  contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
 filterButtons.forEach((button) => {
