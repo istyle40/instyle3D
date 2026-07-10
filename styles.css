@@ -930,13 +930,13 @@ footer {
     position: fixed;
     left: 0;
     right: 0;
-    top: 42px;
+    top: 50vh;
     width: min(340px, 78vw);
     margin-right: auto;
     margin-left: auto;
     padding-right: 0;
     padding-left: 0;
-    transform: none;
+    transform: translateY(-50%);
     background: transparent;
     backdrop-filter: none;
   }
