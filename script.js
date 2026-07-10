@@ -8,6 +8,7 @@ const adminFooterLink = document.querySelector(".admin-footer-link");
 const adminSection = document.querySelector("#administration");
 const showcaseButton = document.querySelector('a[href="#showcase"]');
 const showcaseSection = document.querySelector("#showcase");
+const showcaseCards = document.querySelectorAll(".showcase-preview-grid article");
 const pageTransition = document.querySelector(".page-transition");
 const revealPreview = document.querySelector("#reveal-preview");
 const revealBaseInput = document.querySelector("#reveal-base");
@@ -95,6 +96,28 @@ showcaseButton?.addEventListener("click", (event) => {
   window.setTimeout(() => {
     pageTransition.classList.remove("is-active");
   }, 820);
+});
+
+showcaseCards.forEach((card) => {
+  const updateWipe = (clientX) => {
+    const rect = card.getBoundingClientRect();
+    const percent = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+    card.style.setProperty("--wipe", `${percent}%`);
+    card.classList.add("is-wiping");
+  };
+
+  card.addEventListener("pointermove", (event) => {
+    updateWipe(event.clientX);
+  });
+
+  card.addEventListener("pointerdown", (event) => {
+    card.setPointerCapture(event.pointerId);
+    updateWipe(event.clientX);
+  });
+
+  card.addEventListener("pointerleave", () => {
+    card.classList.remove("is-wiping");
+  });
 });
 
 filterButtons.forEach((button) => {

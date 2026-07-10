@@ -594,9 +594,13 @@ a {
   border: 1px solid rgba(255, 216, 77, 0.38);
   border-radius: 6px;
   background: #090909;
+  cursor: ew-resize;
+  --wipe: 0%;
 }
 
 .showcase-preview-grid img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   min-height: 300px;
@@ -604,8 +608,37 @@ a {
   opacity: 0.82;
 }
 
+.wipe-base {
+  filter: grayscale(1) contrast(1.08);
+}
+
+.wipe-colour {
+  clip-path: inset(0 calc(100% - var(--wipe)) 0 0);
+  filter: saturate(1.08);
+  transition: clip-path 90ms linear;
+}
+
+.showcase-preview-grid article::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: var(--wipe);
+  width: 3px;
+  background: var(--amber);
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 140ms ease;
+}
+
+.showcase-preview-grid article.is-wiping::after {
+  opacity: 1;
+}
+
 .showcase-preview-grid span {
   position: absolute;
+  z-index: 2;
   left: 14px;
   bottom: 14px;
   padding: 8px 10px;
