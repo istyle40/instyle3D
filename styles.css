@@ -480,6 +480,15 @@ a {
   padding-bottom: clamp(34px, 5vw, 58px);
 }
 
+.feature-box-title {
+  margin: 0 auto 22px;
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
 .future-box-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
