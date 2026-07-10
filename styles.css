@@ -554,11 +554,17 @@ a {
 }
 
 .showcase-title {
-  margin: 0 0 30px;
+  display: inline-block;
+  margin: 0 0 34px;
+  padding: 14px 18px;
   color: #fff;
-  font-size: clamp(2rem, 5vw, 4.4rem);
+  background: #050505;
+  border-left: 8px solid var(--amber);
+  border-bottom: 1px solid rgba(255, 216, 77, 0.42);
+  font-size: clamp(2.6rem, 7vw, 6.2rem);
   font-weight: 900;
-  line-height: 1;
+  line-height: 0.92;
+  text-transform: uppercase;
 }
 
 .showcase-heading {
