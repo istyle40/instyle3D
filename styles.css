@@ -1071,7 +1071,13 @@ footer {
 
 .admin-footer-link {
   margin-left: auto;
-  color: rgba(255, 255, 255, 0.32);
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  color: var(--amber);
+  border: 1px solid rgba(255, 216, 77, 0.55);
+  border-radius: 4px;
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -1080,7 +1086,8 @@ footer {
 }
 
 .admin-footer-link:hover {
-  color: var(--amber);
+  color: #050505;
+  background: var(--amber);
 }
 
 @media (max-width: 860px) {
