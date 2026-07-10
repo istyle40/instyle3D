@@ -928,13 +928,15 @@ footer {
 
   .brand {
     position: fixed;
-    left: 50vw;
-    right: auto;
+    left: 0;
+    right: 0;
     top: 42px;
-    width: min(420px, 82vw);
+    width: min(340px, 78vw);
+    margin-right: auto;
+    margin-left: auto;
     padding-right: 0;
     padding-left: 0;
-    transform: translateX(-50%);
+    transform: none;
     background: transparent;
     backdrop-filter: none;
   }
