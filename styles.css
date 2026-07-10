@@ -518,6 +518,28 @@ a {
   font-size: 1.04rem;
 }
 
+.yellow-showcase-row {
+  margin-top: 0;
+}
+
+.yellow-showcase-row article {
+  display: grid;
+  min-height: 150px;
+  place-items: center;
+  background: var(--amber);
+  border: 0;
+  box-shadow: none;
+}
+
+.yellow-showcase-row h3 {
+  padding: 18px;
+  color: #050505;
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .contact-link {
   display: inline-flex;
   align-items: center;
