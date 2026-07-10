@@ -443,6 +443,7 @@ a {
   border-left: 8px solid var(--amber);
   border-radius: 4px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+  text-align: center;
 }
 
 .intro-copy-section .showcase-intro::after {
@@ -457,7 +458,7 @@ a {
 }
 
 .showcase-intro h2 {
-  margin: 0;
+  margin: 0 auto;
   max-width: 760px;
   color: #fff;
   font-size: clamp(2.2rem, 7vw, 6.8rem);
@@ -468,7 +469,7 @@ a {
 
 .showcase-intro p {
   max-width: 820px;
-  margin: 22px 0 0;
+  margin: 22px auto 0;
   color: rgba(255, 255, 255, 0.82);
   font-size: clamp(1rem, 1.35vw, 1.16rem);
   line-height: 1.72;
