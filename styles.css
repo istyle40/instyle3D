@@ -474,12 +474,19 @@ a {
   line-height: 1.72;
 }
 
-.showcase-intro strong {
+.idea-button {
   display: inline-block;
   padding: 9px 12px;
   color: #050505;
   background: var(--amber);
   font-weight: 900;
+  text-decoration: none;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.idea-button:hover {
+  background: #fff;
+  transform: translateY(-2px);
 }
 
 .segment-copy p {
