@@ -491,15 +491,13 @@ a {
   display: grid;
   place-items: center;
   overflow: hidden;
-  color: #fff;
+  color: #050505;
   background:
-    linear-gradient(135deg, rgba(255, 216, 77, 0.2), transparent 34%),
-    linear-gradient(315deg, rgba(255, 216, 77, 0.16), transparent 42%),
-    #070707;
-  border: 1px solid rgba(255, 216, 77, 0.55);
+    linear-gradient(135deg, #ffe978, #ffd84d 48%, #caa000);
+  border: 2px solid #fff;
   border-radius: 6px;
   text-decoration: none;
-  box-shadow: 0 18px 58px rgba(0, 0, 0, 0.42);
+  box-shadow: 0 18px 58px rgba(255, 216, 77, 0.24);
 }
 
 .future-box::before,
@@ -511,7 +509,7 @@ a {
 
 .future-box::before {
   inset: 10px;
-  border: 1px solid rgba(255, 216, 77, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.22);
 }
 
 .future-box::after {
@@ -531,7 +529,7 @@ a {
 .future-box span {
   position: relative;
   z-index: 1;
-  color: #fff;
+  color: #050505;
   font-size: clamp(1.1rem, 2.1vw, 2rem);
   font-weight: 900;
   letter-spacing: 0.08em;
