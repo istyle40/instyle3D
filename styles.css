@@ -984,6 +984,56 @@ a {
   }
 }
 
+@media (max-width: 900px) {
+  .hero {
+    display: block;
+    min-height: 100svh;
+    padding: 0;
+    background: #030303;
+  }
+
+  .hero::after {
+    opacity: 1;
+    background-position: center center;
+  }
+
+  .ambient-glow,
+  .particle-field,
+  .wireframe-wrap,
+  .left-visual {
+    display: none;
+  }
+
+  .hero-content {
+    position: absolute;
+    left: 50%;
+    top: 56%;
+    width: min(76vw, 420px);
+    margin: 0;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    animation: none;
+  }
+
+  .hero-logo,
+  .logo-rule,
+  .headline,
+  .hero-content p,
+  .scroll-cue {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .hero-actions {
+    width: min(76vw, 420px);
+    margin-top: 24vh;
+  }
+
+  .btn {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
