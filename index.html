@@ -3,153 +3,132 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Instyle 3D Prints</title>
+    <title>InStyle3D Printing Studios</title>
     <meta
       name="description"
-      content="A portfolio website for showcasing custom 3D prints, models, prototypes, and unique studio work."
+      content="Custom 3D printing, artistic sculptures and personalised creations designed with precision and brought to life layer by layer."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=51" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="intro-active">
-    <div class="intro-screen" aria-label="Website intro">
-      <img class="intro-printer" src="assets/hero-bust-modern.png" alt="" />
-      <div class="intro-shade"></div>
-      <div class="intro-logo-build" aria-hidden="true">
-        <span class="build-line build-line-a"></span>
-        <span class="build-line build-line-b"></span>
-        <span class="build-line build-line-c"></span>
-        <span class="build-line build-line-d"></span>
-        <span class="build-line build-line-e"></span>
+  <body class="intro-running">
+    <div class="intro-overlay" aria-label="Cinematic intro">
+      <div class="intro-glow" aria-hidden="true"></div>
+      <div class="intro-wire" aria-hidden="true"></div>
+      <div class="intro-sculpture" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
-      <img src="assets/logo-new-cutout.png" alt="Instyle 3D Print Studio" />
-      <div class="intro-line"></div>
-      <div class="intro-actions">
-        <button class="intro-sound" type="button">Play intro</button>
-        <button class="intro-skip" type="button">Enter site</button>
+      <div class="intro-nozzle" aria-hidden="true"></div>
+      <img class="intro-logo" src="assets/instyle3d-logo-orange.png" alt="InStyle3D" />
+      <div class="intro-title" aria-hidden="true">
+        <span>Ideas</span>
+        <span>Become</span>
+        <span>Reality</span>
       </div>
+      <button class="skip-intro" type="button">Skip Intro</button>
     </div>
 
-    <header class="site-header" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Instyle 3D Prints home">
-        <span class="brand-mark">
-          <img src="assets/logo-new-cutout.png" alt="" />
-        </span>
-      </a>
+    <header class="top-nav" aria-label="Primary navigation">
+      <nav class="nav-links" aria-label="Main menu">
+        <a class="is-active" href="#top">Home</a>
+        <a href="#creations">Creations</a>
+        <a href="#about">About</a>
+        <a href="#custom-projects">Custom Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="quote-link" href="#quote">Get a Quote</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
     <main id="top">
-      <section class="hero">
-        <img src="assets/hero-bust-modern.png" alt="3D printed busts and modern display figures in a maker studio" />
-        <div class="hero-overlay"></div>
-      </section>
-
-      <section class="segment intro-copy-section" id="intro">
-        <div class="showcase-intro">
-          <h2>We turn ideas into reality</h2>
-          <p>
-            At Instyle3D Print Studio, imagination takes physical form. We create high-quality
-            custom 3D prints, detailed figurines, personalised gifts, prototypes, decorative models,
-            and unique designs made to stand out.
-          </p>
-          <p>
-            From your first idea to the finished print, every project is produced with precision,
-            creativity, and attention to detail.
-          </p>
+      <section class="hero" aria-label="InStyle3D cinematic hero">
+        <div class="ambient-glow" aria-hidden="true"></div>
+        <div class="particle-field" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
-      </section>
 
-      <section class="segment feature-box-section" aria-label="Main sections">
-        <h2 class="feature-box-title">Explore Instyle3D</h2>
-        <div class="future-box-grid">
-          <a class="future-box" href="#intro">
-            <span>About Us</span>
-          </a>
-          <a class="future-box" href="#showcase">
-            <span>Showcase</span>
-          </a>
-          <a class="future-box" href="#contact">
-            <span>Contact Us</span>
-          </a>
+        <div class="wireframe-wrap" aria-hidden="true">
+          <svg class="wireframe" viewBox="0 0 760 760" role="img">
+            <g class="mesh mesh-soft">
+              <path d="M20 500 C160 360 260 650 410 480 S620 210 750 280" />
+              <path d="M40 560 C180 420 280 700 440 540 S650 250 760 360" />
+              <path d="M0 430 C130 320 260 560 400 410 S610 160 730 210" />
+              <path d="M120 300 C240 210 340 470 490 330 S650 130 740 170" />
+              <path d="M160 650 C260 560 360 700 520 600 S690 410 750 450" />
+            </g>
+            <g class="mesh mesh-lines">
+              <path d="M70 500 L190 410 L330 495 L460 395 L610 300 L735 340" />
+              <path d="M130 585 L260 500 L390 560 L540 455 L710 510" />
+              <path d="M110 390 L245 350 L380 410 L520 260 L690 215" />
+              <path d="M245 350 L260 500 L330 495 L390 560 L460 395 L540 455" />
+              <path d="M520 260 L610 300 L690 215 L735 340 L710 510" />
+            </g>
+            <g class="mesh-dots">
+              <circle cx="70" cy="500" r="3" /><circle cx="190" cy="410" r="3" />
+              <circle cx="330" cy="495" r="3" /><circle cx="460" cy="395" r="3" />
+              <circle cx="610" cy="300" r="3" /><circle cx="735" cy="340" r="3" />
+              <circle cx="260" cy="500" r="3" /><circle cx="390" cy="560" r="3" />
+              <circle cx="540" cy="455" r="3" /><circle cx="690" cy="215" r="3" />
+              <circle cx="710" cy="510" r="3" /><circle cx="520" cy="260" r="3" />
+            </g>
+          </svg>
         </div>
-      </section>
 
-      <section class="segment public-showcase is-hidden" id="showcase">
-        <h2 class="showcase-title">Our Showcase</h2>
-        <div class="showcase-preview-grid">
-          <article>
-            <img class="wipe-base" src="assets/showcase-parametric-lamp.png" alt="Contemporary 3D printed parametric lamp product model" />
-            <img class="wipe-colour" src="assets/showcase-parametric-lamp.png" alt="" aria-hidden="true" />
-            <span>Parametric Product</span>
-          </article>
-          <article>
-            <img class="wipe-base" src="assets/showcase-contemporary-architecture.png" alt="Futuristic 3D printed architectural model" />
-            <img class="wipe-colour" src="assets/showcase-contemporary-architecture.png" alt="" aria-hidden="true" />
-            <span>Design Concepts</span>
-          </article>
-          <article>
-            <img class="wipe-base" src="assets/showcase-contemporary-functional.png" alt="Contemporary functional 3D printed product prototypes" />
-            <img class="wipe-colour" src="assets/showcase-contemporary-functional.png" alt="" aria-hidden="true" />
-            <span>Product Prototypes</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="segment segment-contact" id="contact">
-        <div class="segment-kicker">Contact Us</div>
-        <div class="segment-copy">
-          <h2>Ready to start a print?</h2>
-          <p>Send your file, size, colour choice, or a simple idea and we can shape it from there.</p>
-          <a class="contact-link" href="mailto:instyle3dstudios@gmail.com">instyle3dstudios@gmail.com</a>
-        </div>
-      </section>
-
-      <section class="segment admin-section is-hidden" id="administration">
-        <div class="segment-kicker">Administration</div>
-        <div class="admin-panel">
-          <div class="segment-copy">
-            <h2>Studio control area.</h2>
-            <p>
-              A private-style section for managing future uploads, live stream details,
-              and incoming print requests.
-            </p>
+        <div class="left-visual" aria-hidden="true">
+          <div class="printer-arm">
+            <span class="rail rail-top"></span>
+            <span class="rail rail-bottom"></span>
+            <span class="printer-block"></span>
           </div>
-          <div class="admin-grid">
-            <article>
-              <span>01</span>
-              <h3>Showcase Uploads</h3>
-              <p>Add high-resolution JPEGs for new studio work and print projects.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Live View Settings</h3>
-              <p>Keep OBS and Facebook Live details organised for future connection.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>Quote Requests</h3>
-              <p>Review customer notes, sizes, colours, and project ideas.</p>
-            </article>
+          <div class="nozzle">
+            <span></span>
+          </div>
+          <div class="filament"></div>
+          <div class="sculpture">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="print-bed"></div>
+        </div>
+
+        <div class="hero-content">
+          <img class="hero-logo" src="assets/instyle3d-logo-orange.png" alt="InStyle3D Design 3D Printing" />
+          <div class="headline" aria-label="Ideas become reality">
+            <span>Ideas</span>
+            <span class="orange">Become</span>
+            <span>Reality</span>
+          </div>
+          <p>
+            Custom 3D printing, artistic sculptures and personalised creations designed
+            with precision and brought to life layer by layer.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="btn btn-filled" href="#creations">Explore Our Creations</a>
+            <a class="btn btn-outline" href="#custom-projects">Start a Custom Project</a>
+          </div>
+          <div class="scroll-cue" aria-hidden="true">
+            <span class="mouse-icon"></span>
+            <span class="arrow-down"></span>
+            <strong>Scroll to Discover</strong>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <span>Instyle 3D Prints</span>
-      <span>Custom 3D printing showcase</span>
-      <a class="admin-footer-link" href="#administration">Admin</a>
-    </footer>
-
-    <div class="page-transition" aria-hidden="true">
-      <span>Opening Showcase</span>
-    </div>
-
-    <script src="script.js?v=9"></script>
+    <script src="script.js"></script>
   </body>
 </html>
