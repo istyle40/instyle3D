@@ -64,7 +64,7 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(26px, 4vw, 72px);
+  gap: clamp(28px, 4.4vw, 76px);
 }
 
 .nav-links a {
@@ -103,7 +103,9 @@ a {
 }
 
 .menu-toggle {
-  display: none;
+  position: absolute;
+  right: clamp(22px, 3.8vw, 62px);
+  display: block;
   width: 48px;
   height: 42px;
   border: 0;
@@ -116,20 +118,22 @@ a {
   height: 2px;
   margin: 8px 0;
   background: var(--white);
+  box-shadow: 0 0 12px rgba(255, 106, 0, 0.22);
 }
 
 .hero {
   position: relative;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: minmax(420px, 0.95fr) minmax(420px, 1.05fr);
+  grid-template-columns: minmax(390px, 0.86fr) minmax(480px, 1.14fr);
   align-items: center;
   overflow: hidden;
-  padding: clamp(100px, 11vh, 150px) clamp(28px, 5vw, 86px) clamp(34px, 5vh, 58px);
+  padding: clamp(100px, 11vh, 148px) clamp(24px, 4.6vw, 74px) clamp(24px, 4vh, 46px);
   isolation: isolate;
   background:
-    radial-gradient(circle at 24% 88%, rgba(255, 106, 0, 0.2), transparent 25%),
-    radial-gradient(circle at 70% 48%, rgba(255, 106, 0, 0.08), transparent 22%),
+    radial-gradient(circle at 18% 90%, rgba(255, 106, 0, 0.32), transparent 24%),
+    radial-gradient(circle at 54% 54%, rgba(255, 106, 0, 0.06), transparent 18%),
+    radial-gradient(circle at 89% 52%, rgba(255, 106, 0, 0.14), transparent 26%),
     linear-gradient(90deg, #060606 0%, #050505 48%, #020202 100%);
 }
 
@@ -145,11 +149,11 @@ a {
 
 .ambient-glow {
   position: absolute;
-  right: 8vw;
-  top: 24vh;
+  right: 4vw;
+  top: 18vh;
   z-index: -3;
-  width: 38vw;
-  max-width: 620px;
+  width: 46vw;
+  max-width: 760px;
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 106, 0, 0.18), transparent 64%);
@@ -189,11 +193,11 @@ a {
 .wireframe-wrap {
   position: absolute;
   z-index: -2;
-  top: 6vh;
-  right: -8vw;
-  width: min(58vw, 850px);
-  opacity: 0.42;
-  transform: rotate(-8deg);
+  top: 1vh;
+  right: -12vw;
+  width: min(66vw, 1060px);
+  opacity: 0.58;
+  transform: rotate(-9deg) scaleY(1.06);
 }
 
 .wireframe {
@@ -205,7 +209,7 @@ a {
 .mesh path,
 .mesh-lines path {
   fill: none;
-  stroke: rgba(255, 106, 0, 0.72);
+  stroke: rgba(255, 106, 0, 0.82);
   stroke-width: 1.2;
   stroke-linecap: round;
   stroke-dasharray: 10 14;
@@ -225,7 +229,7 @@ a {
 
 .left-visual {
   position: relative;
-  min-height: min(72vh, 720px);
+  min-height: min(79vh, 780px);
   opacity: 0;
   transform: translateX(-26px);
   animation: heroLeftIn 900ms 1400ms ease forwards;
@@ -233,31 +237,37 @@ a {
 
 .printer-arm {
   position: absolute;
-  left: -9vw;
-  top: 6%;
-  width: min(48vw, 670px);
-  height: 150px;
-  transform: rotate(4deg);
+  left: -16vw;
+  top: -2%;
+  width: min(58vw, 880px);
+  height: 188px;
+  transform: rotate(7deg);
+  filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.75));
 }
 
 .rail {
   position: absolute;
   left: 0;
-  width: 88%;
-  height: 10px;
-  background: linear-gradient(90deg, #020202, #1d1d1d 48%, rgba(255, 106, 0, 0.78));
-  box-shadow: 0 0 22px rgba(255, 106, 0, 0.3);
+  width: 92%;
+  height: 12px;
+  background: linear-gradient(90deg, #010101, #202020 48%, rgba(255, 106, 0, 0.86));
+  box-shadow: 0 0 24px rgba(255, 106, 0, 0.36);
 }
 
-.rail-top { top: 20px; }
-.rail-bottom { top: 62px; }
+.rail-top { top: 30px; }
+.rail-bottom { top: 78px; }
+.rail-glow {
+  top: 52px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 106, 0, 0.95), transparent);
+}
 
 .printer-block {
   position: absolute;
-  right: 6%;
-  top: 0;
-  width: 170px;
-  height: 100px;
+  right: 8%;
+  top: 8px;
+  width: 196px;
+  height: 118px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background:
     linear-gradient(140deg, rgba(255, 255, 255, 0.08), transparent 32%),
@@ -265,12 +275,27 @@ a {
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.8);
 }
 
+.printer-block::before,
+.printer-block::after {
+  content: "";
+  position: absolute;
+  top: 34px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #030303;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.printer-block::before { left: 28px; }
+.printer-block::after { right: 28px; }
+
 .nozzle {
   position: absolute;
-  left: clamp(180px, 18vw, 280px);
-  top: 22%;
-  width: 88px;
-  height: 120px;
+  left: clamp(176px, 15.7vw, 254px);
+  top: 19%;
+  width: 102px;
+  height: 146px;
   background:
     linear-gradient(90deg, transparent 18%, rgba(255, 106, 0, 0.46), transparent 82%),
     linear-gradient(#1f1f1f, #050505);
@@ -278,7 +303,24 @@ a {
   filter: drop-shadow(0 0 20px rgba(255, 106, 0, 0.45));
 }
 
-.nozzle span {
+.nozzle-ring {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: 92px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 106, 0, 0.42);
+  transform: translateX(-50%);
+  background: rgba(8, 8, 8, 0.88);
+}
+
+.nozzle-ring-low {
+  top: 62%;
+  width: 70px;
+}
+
+.nozzle > span:last-child {
   position: absolute;
   left: 50%;
   top: 80%;
@@ -293,10 +335,10 @@ a {
 
 .filament {
   position: absolute;
-  left: calc(clamp(180px, 18vw, 280px) + 42px);
-  top: calc(22% + 118px);
+  left: calc(clamp(176px, 15.7vw, 254px) + 49px);
+  top: calc(19% + 140px);
   width: 2px;
-  height: 104px;
+  height: 132px;
   background: linear-gradient(var(--orange), rgba(255, 106, 0, 0.12));
   box-shadow: 0 0 14px rgba(255, 106, 0, 0.95);
   transform-origin: top;
@@ -305,21 +347,36 @@ a {
 
 .sculpture {
   position: absolute;
-  left: clamp(56px, 8vw, 132px);
-  bottom: 10%;
-  width: clamp(230px, 26vw, 390px);
-  height: clamp(320px, 48vh, 520px);
-  filter: drop-shadow(0 0 28px rgba(255, 106, 0, 0.34));
+  left: clamp(42px, 6.2vw, 104px);
+  bottom: 8%;
+  width: clamp(280px, 28vw, 460px);
+  height: clamp(390px, 55vh, 610px);
+  filter:
+    drop-shadow(0 0 32px rgba(255, 106, 0, 0.5))
+    drop-shadow(0 26px 40px rgba(0, 0, 0, 0.82));
   transform: perspective(700px) rotateY(-8deg);
+}
+
+.sculpture::before {
+  content: "";
+  position: absolute;
+  inset: 4% 9% 1%;
+  border-radius: 48% 52% 46% 54% / 54% 46% 58% 42%;
+  background:
+    radial-gradient(circle at 30% 18%, rgba(255, 132, 32, 0.34), transparent 26%),
+    linear-gradient(120deg, rgba(255, 106, 0, 0.16), rgba(20, 20, 20, 0.58) 44%, rgba(255, 106, 0, 0.2));
+  filter: blur(2px);
+  opacity: 0.78;
+  transform: skewY(-5deg);
 }
 
 .sculpture span {
   position: absolute;
   left: 50%;
-  height: 3px;
+  height: 4px;
   border-radius: 999px;
-  background: linear-gradient(90deg, transparent, rgba(255, 211, 170, 0.92), var(--orange), transparent);
-  box-shadow: 0 0 12px rgba(255, 106, 0, 0.65);
+  background: linear-gradient(90deg, transparent, rgba(255, 219, 190, 0.95), var(--orange), rgba(255, 106, 0, 0.7), transparent);
+  box-shadow: 0 0 15px rgba(255, 106, 0, 0.78);
   transform: translateX(-50%) rotate(var(--twist));
 }
 
@@ -356,12 +413,14 @@ a {
 
 .print-bed {
   position: absolute;
-  left: clamp(18px, 5vw, 86px);
-  bottom: 6%;
-  width: clamp(280px, 32vw, 490px);
-  height: 34px;
+  left: clamp(-4px, 3.6vw, 54px);
+  bottom: 4%;
+  width: clamp(360px, 36vw, 590px);
+  height: 54px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(255, 106, 0, 0.4), rgba(3, 3, 3, 0.95) 64%);
+  background:
+    radial-gradient(ellipse, rgba(255, 106, 0, 0.46), rgba(3, 3, 3, 0.95) 66%),
+    repeating-radial-gradient(ellipse at center, rgba(255, 106, 0, 0.3) 0 1px, transparent 2px 16px);
   border: 1px solid rgba(255, 106, 0, 0.25);
 }
 
@@ -370,8 +429,8 @@ a {
   z-index: 2;
   display: grid;
   justify-items: center;
-  max-width: 650px;
-  margin: 0 auto;
+  max-width: 680px;
+  margin: 0 auto 0 -4vw;
   text-align: center;
   opacity: 0;
   transform: translateY(18px);
@@ -379,27 +438,35 @@ a {
 }
 
 .hero-logo {
-  width: clamp(280px, 23vw, 340px);
-  margin-bottom: clamp(24px, 4vh, 34px);
+  width: clamp(310px, 24.5vw, 388px);
+  margin-bottom: clamp(18px, 2.8vh, 26px);
+}
+
+.logo-rule {
+  width: 78px;
+  height: 1px;
+  margin-bottom: clamp(18px, 3vh, 28px);
+  background: var(--orange);
+  box-shadow: 0 0 14px rgba(255, 106, 0, 0.78);
 }
 
 .headline {
   display: grid;
   gap: 0;
   color: var(--white);
-  font-size: clamp(3rem, 5.9vw, 6rem);
+  font-size: clamp(3.35rem, 6.5vw, 6.7rem);
   font-weight: 500;
-  line-height: 0.96;
-  letter-spacing: 0.26em;
-  text-indent: 0.26em;
+  line-height: 0.94;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
   text-transform: uppercase;
 }
 
 .headline .orange {
   color: var(--orange);
   font-weight: 900;
-  letter-spacing: 0.12em;
-  text-indent: 0.12em;
+  letter-spacing: 0.11em;
+  text-indent: 0.11em;
 }
 
 .hero-content p {
@@ -414,7 +481,7 @@ a {
   display: flex;
   justify-content: center;
   gap: 18px;
-  margin-top: clamp(28px, 5vh, 44px);
+  margin-top: clamp(24px, 4vh, 36px);
 }
 
 .btn {
@@ -433,9 +500,9 @@ a {
 }
 
 .btn::after {
-  content: "→";
+  content: "->";
   margin-left: 16px;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .btn-filled {
