@@ -147,6 +147,16 @@ a {
     radial-gradient(circle at 18% 45%, rgba(255, 106, 0, 0.14), transparent 25%);
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background: url("assets/hero-printing-reference.png") center center / cover no-repeat;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .ambient-glow {
   position: absolute;
   right: 4vw;
@@ -774,6 +784,81 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (min-width: 901px) {
+  .hero {
+    display: block;
+    padding: 0;
+    background: #030303;
+  }
+
+  .hero::before {
+    z-index: -2;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.08), transparent 50%, rgba(0, 0, 0, 0.08)),
+      radial-gradient(circle at 50% 52%, rgba(255, 106, 0, 0.03), transparent 30%);
+  }
+
+  .hero::after {
+    opacity: 1;
+  }
+
+  .ambient-glow,
+  .particle-field,
+  .wireframe-wrap,
+  .left-visual {
+    display: none;
+  }
+
+  .hero-content {
+    position: absolute;
+    left: 50%;
+    top: 55.5%;
+    width: min(38vw, 620px);
+    max-width: none;
+    margin: 0;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    animation: none;
+  }
+
+  .hero-logo,
+  .logo-rule,
+  .headline,
+  .hero-content p,
+  .scroll-cue {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .hero-actions {
+    width: min(38vw, 620px);
+    margin-top: 23.5vh;
+    gap: 18px;
+  }
+
+  .btn {
+    min-height: 56px;
+    opacity: 0;
+  }
+
+  .top-nav {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .top-nav a,
+  .menu-toggle span {
+    opacity: 0;
+  }
+
+  .nav-links a,
+  .menu-toggle,
+  .btn {
+    pointer-events: auto;
   }
 }
 
