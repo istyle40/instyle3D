@@ -4,17 +4,19 @@ const skipIntro = document.querySelector(".skip-intro");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const introSessionKey = "instyle3dIntroPlayed:referenceHero";
+const forceIntro = new URLSearchParams(window.location.search).get("intro") === "1";
 
 const closeIntro = () => {
   if (!introOverlay) return;
   introOverlay.classList.add("is-hidden");
   body.classList.remove("intro-running");
-  sessionStorage.setItem("instyle3dIntroPlayed", "true");
+  sessionStorage.setItem(introSessionKey, "true");
 };
 
-const introAlreadyPlayed = sessionStorage.getItem("instyle3dIntroPlayed") === "true";
+const introAlreadyPlayed = sessionStorage.getItem(introSessionKey) === "true";
 
-if (prefersReducedMotion.matches || introAlreadyPlayed) {
+if (prefersReducedMotion.matches || (introAlreadyPlayed && !forceIntro)) {
   introOverlay?.classList.add("is-hidden");
   body.classList.remove("intro-running");
 } else {
